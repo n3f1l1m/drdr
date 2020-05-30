@@ -35,3 +35,26 @@ function task45(x, y) {
     else 
         return 0
 }
+//59
+function task59(n) {
+    let x = [];
+    x[0] = n % 10;
+    x[1] = (n - x[0]) / 10 % 10;
+    x[2] = (n - x[1] * 10 - x[0]) / 100;
+    let swapp;
+    do {
+        swapp = false;
+        for (var i=0; i < x.length-1; i++)
+        {
+            if (x[i] > x[i+1])
+            {
+               var temp = x[i];
+               x[i] = x[i+1];
+               x[i+1] = temp;
+               swapp = true;
+            }
+        }
+        n--;
+    } while (swapp);
+    return {x};
+}
